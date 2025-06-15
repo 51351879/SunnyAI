@@ -1,0 +1,205 @@
+我来帮你从这个awesome-cursorrules仓库中选择最适合你个人网站开发的规则，并教你如何配置！
+🎯 适合你的.cursorrules推荐
+最佳选择：Next.js + React组合规则
+基于你的技术栈（React + Next.js个人展示网站），我推荐以下组合：
+1. Next.js规则 + React规则 + TypeScript规则
+📝 第一步：创建.cursorrules文件
+在Cursor中操作：
+
+打开你的项目
+在Cursor中打开你从GitHub克隆的项目文件夹
+
+创建.cursorrules文件
+在项目根目录右键 → New File
+输入文件名：.cursorrules
+
+添加规则内容
+
+我会为你定制一个完整的规则文件
+
+
+
+🔧 第二步：定制的.cursorrules内容
+复制以下完整内容到你的.cursorrules文件：
+# Personal Portfolio Website Development Rules
+
+You are an expert in React, Next.js, TypeScript, and Tailwind CSS.
+
+## Key Principles
+- Write concise, technical responses with accurate examples
+- Use functional components with TypeScript interfaces
+- Prefer composition over inheritance
+- Use descriptive variable names (e.g., `isLoading`, `hasError`)
+- Structure files consistently (components, pages, styles, utils)
+
+## Next.js App Router
+- Use Next.js 14+ App Router for routing and layouts
+- Implement proper SEO with metadata API
+- Use Server Components by default, Client Components when needed
+- Leverage static generation for better performance
+- Implement proper error boundaries and loading states
+
+## TypeScript
+- Use TypeScript for all code; prefer interfaces over types
+- Avoid enums; use const objects or union types
+- Use functional components with proper prop typing
+- Implement proper error handling with typed exceptions
+
+## Tailwind CSS
+- Use Tailwind utility classes for styling
+- Implement responsive design with mobile-first approach
+- Use consistent spacing scale (4, 8, 12, 16, 24, 32, 48, 64)
+- Leverage Tailwind's built-in color palette
+- Use CSS Grid and Flexbox for layouts
+
+## UI and Styling
+- Design for accessibility (ARIA labels, semantic HTML, keyboard navigation)
+- Implement smooth transitions and micro-interactions
+- Use consistent typography scale and hierarchy
+- Ensure proper contrast ratios for text and backgrounds
+- Optimize for both light and dark themes if applicable
+
+## Performance Optimization
+- Minimize 'use client' directives; prefer server components
+- Use dynamic imports for code splitting
+- Implement proper image optimization with Next.js Image component
+- Minimize bundle size by importing only necessary modules
+- Use React.memo() for expensive computations
+
+## Data Fetching
+- Use Server Components for initial data loading
+- Implement proper loading and error states
+- Use React Query or SWR for client-side data fetching when needed
+- Cache API responses appropriately
+- Handle edge cases (network errors, empty states)
+
+## File Structure
+SunnyAI/
+├── .bolt/              # Bolt.new configuration files
+│   ├── config.json
+│   ├── ignore
+│   └── prompt
+├── app/                # Next.js App Router pages
+│   ├── globals.css     # Global styles
+│   ├── layout.tsx      # Root layout
+│   ├── page.tsx        # Homepage
+│   ├── about/
+│   │   └── page.tsx    # About page
+│   ├── achievements/
+│   │   └── page.tsx    # Achievements/Certificates
+│   ├── admin/
+│   │   └── page.tsx    # Admin dashboard
+│   ├── blog/
+│   │   └── page.tsx    # Blog/Thoughts section
+│   ├── contact/
+│   │   └── page.tsx    # Contact page
+│   └── projects/
+│       └── page.tsx    # Projects showcase
+├── components/         # React components library
+│   ├── admin/          # Admin-specific components
+│   ├── ui/             # Reusable UI components
+│   ├── AchievementCard.tsx
+│   ├── AchievementsPreview.tsx
+│   ├── BlogCard.tsx
+│   ├── BlogPreview.tsx
+│   ├── Contact.tsx
+│   ├── Footer.tsx
+│   ├── Hero.tsx
+│   ├── Navigation.tsx
+│   ├── ProjectCard.tsx
+│   ├── ProjectsPreview.tsx
+│   ├── ScrollbarManager.tsx
+│   ├── SearchFilter.tsx
+│   └── ThemeProvider.tsx
+├── contexts/           # React Context providers
+│   └── LanguageContext.tsx
+├── data/               # Static data files
+│   ├── achievements.ts
+│   ├── blog.ts
+│   └── projects.ts
+├── hooks/              # Custom React hooks
+│   └── use-toast.ts
+├── lib/                # Utility functions
+│   └── utils.ts
+└── public/             # Static assets
+└── favicon.ico
+
+## Component Patterns
+- Keep components small and focused on single responsibility
+- Use composition patterns for reusable UI elements
+- Implement proper prop validation with TypeScript
+- Use custom hooks for reusable stateful logic
+- Follow the "container/presentational" component pattern when appropriate
+
+## Error Handling
+- Use error boundaries for graceful error handling
+- Implement proper 404 and error pages
+- Provide meaningful error messages to users
+- Log errors appropriately for debugging
+
+## SEO and Metadata
+- Implement proper meta tags for each page
+- Use structured data (JSON-LD) for better search visibility
+- Optimize images with alt text and proper sizing
+- Implement Open Graph and Twitter Card meta tags
+- Use semantic HTML5 elements
+
+## Personal Website Specific
+- Focus on clean, professional design
+- Highlight projects with proper case studies
+- Include clear contact information and social links
+- Implement smooth scrolling and navigation
+- Showcase skills and experience effectively
+- Ensure fast loading times and good Core Web Vitals
+
+## Testing (if implemented)
+- Write unit tests for utility functions
+- Test components with React Testing Library
+- Implement E2E tests for critical user flows
+- Test accessibility compliance
+
+## Deployment and Build
+- Optimize for static export if using static hosting
+- Implement proper build-time optimizations
+- Use environment variables for configuration
+- Ensure proper error pages (404, 500) are implemented
+
+## Code Quality
+- Use ESLint and Prettier for code formatting
+- Follow consistent naming conventions
+- Write self-documenting code with clear function names
+- Add comments for complex business logic only
+- Prefer small, pure functions over large, complex ones
+
+## SEO
+- Export metadata from each page
+- Implement structured data for portfolio content
+- Use semantic HTML throughout
+
+## Error Handling
+- Implement proper loading states
+- Handle network errors gracefully
+- Provide meaningful error messages
+- Use toast notifications for actions
+
+## Component Development Guidelines
+
+### Component Organization
+- **UI Components**: Generic, reusable components go in `components/ui/`
+- **Feature Components**: Specific feature components in `components/` root
+- **Admin Components**: Admin-specific components in `components/admin/`
+- **Page Components**: Large page sections as individual components
+
+### Component Naming and Structure
+- Use PascalCase for component files and names
+- Include proper TypeScript interfaces for props
+- Export components as default exports
+- Keep components focused on single responsibility
+
+### Preview Components Pattern
+Your project uses a preview pattern for sections:
+```typescript
+// BlogPreview.tsx - Shows blog preview on homepage
+// ProjectsPreview.tsx - Shows projects preview on homepage
+// AchievementsPreview.tsx - Shows achievements preview on homepage
+
