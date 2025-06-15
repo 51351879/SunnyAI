@@ -69,7 +69,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden hero-background">
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden hero-background pt-8 md:pt-16">
       {/* Starfield Background */}
       <div className="starfield">
         {generateStars()}
