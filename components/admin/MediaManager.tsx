@@ -34,7 +34,12 @@ interface MediaFile {
   alt?: string;
 }
 
-export default function MediaManager() {
+interface MediaManagerProps {
+  onSelect?: (url: string) => void;
+  folder?: string;
+}
+
+export default function MediaManager({ onSelect, folder }: MediaManagerProps) {
   const [mediaFiles, setMediaFiles] = useState<MediaFile[]>([
     {
       id: '1',
@@ -69,7 +74,7 @@ export default function MediaManager() {
   ]);
 
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
-  const [selectedFolder, setSelectedFolder] = useState('all');
+  const [selectedFolder, setSelectedFolder] = useState(folder || 'all');
   const [searchTerm, setSearchTerm] = useState('');
   const [isUploading, setIsUploading] = useState(false);
   const [selectedFiles, setSelectedFiles] = useState<string[]>([]);
@@ -161,6 +166,12 @@ export default function MediaManager() {
   };
 
   const storageUsage = getStorageUsage();
+
+  const handleFileSelect = (file: MediaFile) => {
+    if (onSelect) {
+      onSelect(file.url);
+    }
+  };
 
   return (
     <div className="space-y-6">
@@ -269,9 +280,12 @@ export default function MediaManager() {
             transition={{ duration: 0.3, delay: index * 0.05 }}
           >
             {viewMode === 'grid' ? (
-              <Card className={`p-4 cursor-pointer transition-all duration-200 ${
-                selectedFiles.includes(file.id) ? 'ring-2 ring-[#17f700]' : ''
-              }`}>
+              <Card 
+                className={`p-4 cursor-pointer transition-all duration-200 ${
+                  selectedFiles.includes(file.id) ? 'ring-2 ring-[#17f700]' : ''
+                }`}
+                onClick={() => handleFileSelect(file)}
+              >
                 <div className="space-y-3">
                   <div 
                     className="relative aspect-video bg-muted rounded-lg overflow-hidden"
@@ -324,9 +338,12 @@ export default function MediaManager() {
                 </div>
               </Card>
             ) : (
-              <Card className={`p-4 ${
-                selectedFiles.includes(file.id) ? 'ring-2 ring-[#17f700]' : ''
-              }`}>
+              <Card 
+                className={`p-4 ${
+                  selectedFiles.includes(file.id) ? 'ring-2 ring-[#17f700]' : ''
+                }`}
+                onClick={() => handleFileSelect(file)}
+              >
                 <div className="flex items-center space-x-4">
                   <div 
                     className="w-16 h-16 bg-muted rounded-lg overflow-hidden cursor-pointer"
